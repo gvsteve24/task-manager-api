@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "dev": "env-cmd -f ./config/dev.env nodemon src/app.js"
   },
   "dependencies": {
     "bcrypt": "^3.0.8",
@@ -13,7 +13,6 @@
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.4.1",
     "mongoose": "^5.9.1",
@@ -25,6 +24,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "nodemon": "^2.0.2"
   }
 }

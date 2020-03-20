@@ -7,7 +7,7 @@ const auth = async (req, res, next) => {
         res.header('Access-Control-Allow-Header', 'Content-Type')
         res.header('Access-Control-Allow-Header', 'Authorization')
         const token = req.header('Authorization').replace('Bearer ','')
-        const decoded = jwt.verify(token, 'thisisnewcourse')
+        const decoded = jwt.verify(token, process.env.JWT_SECRET)
         const user = await User.findOne({ _id: decoded._id, 'tokens.token': token})
         
         if(!user) {
